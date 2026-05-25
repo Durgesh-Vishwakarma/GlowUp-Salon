@@ -114,12 +114,24 @@ export function BookingForm() {
         >
           {status === "success" ? (
             <div className="mb-5 rounded-2xl border border-green-200 bg-green-50 p-4 text-sm font-semibold text-green-800">
-              Thank you! Our team will contact you shortly to confirm your appointment.
+              <p>Thank you! Our team will contact you shortly to confirm your appointment.</p>
+              <Link href={whatsappUrl} target="_blank" className="mt-3 inline-flex">
+                <Button type="button" variant="secondary" size="sm">
+                  <MessageCircle className="h-4 w-4" />
+                  Book on WhatsApp
+                </Button>
+              </Link>
             </div>
           ) : null}
           {error ? (
             <div className="mb-5 rounded-2xl border border-red-200 bg-red-50 p-4 text-sm font-semibold text-red-800">
-              {error}
+              <p>{error}</p>
+              <Link href={whatsappUrl} target="_blank" className="mt-3 inline-flex">
+                <Button type="button" variant="secondary" size="sm">
+                  <MessageCircle className="h-4 w-4" />
+                  Book on WhatsApp
+                </Button>
+              </Link>
             </div>
           ) : null}
 
@@ -194,6 +206,14 @@ export function BookingForm() {
             <Send className="h-4 w-4" />
             {status === "loading" ? "Sending..." : "Request Appointment"}
           </Button>
+          <Link
+            href={whatsappUrl}
+            target="_blank"
+            className="mt-3 flex justify-center text-sm font-semibold text-primary transition hover:text-foreground"
+          >
+            <MessageCircle className="mr-2 h-4 w-4" />
+            Book on WhatsApp
+          </Link>
         </form>
       </div>
     </section>

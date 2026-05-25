@@ -14,6 +14,11 @@ import {
   Wand2
 } from "lucide-react";
 
+export const salonContact = {
+  phone: "+91 98345 17990",
+  whatsappNumber: "919834517990"
+};
+
 export const business = {
   name: "GlowUp Salon & Spa",
   location: "Bandra West, Mumbai",
@@ -22,8 +27,8 @@ export const business = {
     "Premium hair, skin, bridal and spa services in Bandra with expert care, refined interiors and easy appointment booking.",
   shortDescription:
     "A premium beauty destination for polished hair, luminous skin, bridal glam, nails and spa rituals in Bandra West.",
-  phone: "+91 98765 43210",
-  phoneRaw: "919876543210",
+  phone: salonContact.phone,
+  phoneRaw: salonContact.whatsappNumber,
   timing: "10 AM - 9 PM, Monday to Sunday",
   instagram: "#",
   whatsappMessage: "Hi GlowUp Salon, I want to book an appointment."
