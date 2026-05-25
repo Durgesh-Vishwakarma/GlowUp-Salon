@@ -11,6 +11,8 @@ import {
   ShieldCheck,
   Sparkles,
   Star,
+  TicketPercent,
+  UsersRound,
   Wand2
 } from "lucide-react";
 
@@ -127,6 +129,14 @@ export const pricing = [
   { service: "Spa Therapy", price: "₹1,999+", tag: "Relaxation" }
 ];
 
+export const editorialPricing = [
+  { service: "Keratin Smoothening", price: "₹6,999" },
+  { service: "HydraFacial Treatment", price: "₹5,499" },
+  { service: "Bridal Makeup (Premium)", price: "₹24,999" },
+  { service: "Aroma Therapy Massage", price: "₹3,999" },
+  { service: "Gel Extensions", price: "₹2,999" }
+];
+
 export const offers = [
   {
     title: "New Client Offer",
@@ -145,6 +155,24 @@ export const offers = [
     description: "Facial + Hair Spa combo starting at ₹2,999.",
     label: "Weekend",
     cta: "Book Combo"
+  }
+];
+
+export const editorialOffers = [
+  {
+    title: "20% OFF",
+    description: "On your first visit / New clients only",
+    icon: TicketPercent
+  },
+  {
+    title: "Bridal Package",
+    description: "Special discounts / Book in advance",
+    icon: Gem
+  },
+  {
+    title: "Refer & Earn",
+    description: "Refer a friend & get ₹500 off",
+    icon: UsersRound
   }
 ];
 
