@@ -19,9 +19,9 @@ export const business = {
   location: "Bandra West, Mumbai",
   tagline: "Look confident. Feel beautiful.",
   description:
-    "Premium salon, hair, skin and bridal services in Bandra with easy appointment booking and personalized care.",
+    "Premium hair, skin, bridal and spa services in Bandra with expert care, refined interiors and easy appointment booking.",
   shortDescription:
-    "A premium beauty destination for hair, skin, bridal, nails and spa services in Bandra West.",
+    "A premium beauty destination for polished hair, luminous skin, bridal glam, nails and spa rituals in Bandra West.",
   phone: "+91 98765 43210",
   phoneRaw: "919876543210",
   timing: "10 AM - 9 PM, Monday to Sunday",
@@ -40,45 +40,51 @@ export const navItems = [
 ];
 
 export const trustBadges = [
-  { label: "4.9★ Rated by 500+ clients", icon: Star },
-  { label: "10+ Beauty Experts", icon: Sparkles },
-  { label: "Open 7 Days", icon: Clock }
+  { label: "4.9★ Rating", value: "Loved by 500+ clients", icon: Star },
+  { label: "10+ Experts", value: "Hair, skin and bridal artists", icon: Sparkles },
+  { label: "Open 7 Days", value: "Appointments from 10 AM", icon: Clock }
+];
+
+export const heroStats = [
+  { label: "4.9★ Rating", value: "Trusted beauty care" },
+  { label: "500+ Happy Clients", value: "Bandra favourites" },
+  { label: "Instant WhatsApp Booking", value: "Quick slot confirmation" }
 ];
 
 export const services = [
   {
     title: "Hair Styling",
-    description: "Haircut, blow dry, smoothening and color treatments.",
+    description: "Precision cuts, blow dry, smoothening, colour and event-ready styling.",
     price: "Starting from ₹799",
     icon: Scissors
   },
   {
     title: "Skin Care",
-    description: "Glow facials, cleanup, detan and skin refresh rituals.",
+    description: "Glow facials, cleanup, detan and skin rituals tailored to your skin.",
     price: "Starting from ₹1,499",
     icon: Sparkles
   },
   {
     title: "Bridal Makeup",
-    description: "Elegant bridal looks, trials and complete styling support.",
+    description: "Elegant bridal looks, trials, draping and complete beauty styling.",
     price: "Starting from ₹9,999",
     icon: Wand2
   },
   {
     title: "Nail Art",
-    description: "Gel polish, extensions, classic manicures and nail designs.",
+    description: "Gel polish, extensions, premium manicures and detailed nail designs.",
     price: "Starting from ₹999",
     icon: Palette
   },
   {
     title: "Spa & Relaxation",
-    description: "Hair spa, body therapy and soothing self-care treatments.",
+    description: "Restorative hair spa, relaxing therapy and calm self-care rituals.",
     price: "Starting from ₹1,999",
     icon: HeartHandshake
   },
   {
     title: "Party Makeup",
-    description: "Soft glam and event-ready makeup for every celebration.",
+    description: "Soft glam, cocktail looks and camera-ready makeup for celebrations.",
     price: "Starting from ₹2,999",
     icon: Gem
   }
@@ -86,51 +92,54 @@ export const services = [
 
 export const reasons = [
   {
-    title: "Certified beauty experts",
-    description: "Experienced artists who understand your style and occasion.",
+    title: "Expert artists",
+    description: "Certified professionals who shape every look around your features, outfit and occasion.",
     icon: ShieldCheck
   },
   {
     title: "Premium products",
-    description: "Trusted professional-grade products for polished results.",
+    description: "Professional hair, skin and makeup products chosen for lasting finish and comfort.",
     icon: Gem
   },
   {
-    title: "Hygienic setup",
-    description: "Clean tools, sanitized stations and thoughtful service flow.",
+    title: "Immaculate hygiene",
+    description: "Fresh tools, sanitized stations and a calm salon environment for every visit.",
     icon: Sparkles
   },
   {
-    title: "Easy online booking",
-    description: "Book by form or WhatsApp and get a quick confirmation.",
+    title: "Effortless booking",
+    description: "Request a slot online or chat on WhatsApp for fast appointment confirmation.",
     icon: CalendarCheck
   }
 ];
 
 export const pricing = [
-  { service: "Haircut & Styling", price: "₹799+" },
-  { service: "Facial Treatment", price: "₹1,499+" },
-  { service: "Bridal Makeup", price: "₹9,999+" },
-  { service: "Nail Art", price: "₹999+" },
-  { service: "Hair Color", price: "₹2,499+" },
-  { service: "Spa Therapy", price: "₹1,999+" }
+  { service: "Haircut & Styling", price: "₹799+", tag: "Everyday glow" },
+  { service: "Facial Treatment", price: "₹1,499+", tag: "Most booked" },
+  { service: "Bridal Makeup", price: "₹9,999+", tag: "Signature" },
+  { service: "Nail Art", price: "₹999+", tag: "Trending" },
+  { service: "Hair Color", price: "₹2,499+", tag: "Premium colour" },
+  { service: "Spa Therapy", price: "₹1,999+", tag: "Relaxation" }
 ];
 
 export const offers = [
   {
     title: "New Client Offer",
     description: "Get 20% off on your first salon visit.",
-    label: "First Visit"
+    label: "First Visit",
+    cta: "Claim Offer"
   },
   {
     title: "Bridal Trial Package",
     description: "Book bridal consultation and trial makeup at special pricing.",
-    label: "Bridal"
+    label: "Bridal",
+    cta: "Plan My Look"
   },
   {
     title: "Weekend Glow Combo",
     description: "Facial + Hair Spa combo starting at ₹2,999.",
-    label: "Weekend"
+    label: "Weekend",
+    cta: "Book Combo"
   }
 ];
 
@@ -180,15 +189,18 @@ export const galleryImages = [
 export const testimonials = [
   {
     quote: "The booking was easy and the staff was very professional.",
-    name: "Priya S."
+    name: "Priya S.",
+    initials: "PS"
   },
   {
     quote: "Loved the bridal makeup trial. The team understood exactly what I wanted.",
-    name: "Riya M."
+    name: "Riya M.",
+    initials: "RM"
   },
   {
     quote: "Clean salon, great service and easy WhatsApp appointment.",
-    name: "Ananya K."
+    name: "Ananya K.",
+    initials: "AK"
   }
 ];
 

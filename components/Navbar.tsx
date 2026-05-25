@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, Sparkles, X } from "lucide-react";
 import { useState } from "react";
 import { business, navItems } from "@/lib/constants";
 import { createWhatsAppUrl } from "@/lib/utils";
@@ -11,28 +11,28 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/50 bg-background/78 backdrop-blur-xl">
-      <nav className="section-shell flex h-20 items-center justify-between">
+    <header className="sticky top-0 z-50 px-3 pt-3">
+      <nav className="section-shell flex h-16 items-center justify-between rounded-full border border-white/70 bg-white/68 shadow-glass backdrop-blur-2xl">
         <Link href="#home" className="flex items-center gap-3" onClick={() => setIsOpen(false)}>
-          <span className="flex h-11 w-11 items-center justify-center rounded-full bg-primary text-lg font-bold text-primary-foreground shadow-soft">
-            G
+          <span className="flex h-11 w-11 items-center justify-center rounded-full bg-espresso text-primary-foreground shadow-soft">
+            <Sparkles className="h-5 w-5 text-accent" />
           </span>
-          <span>
-            <span className="block font-display text-xl font-semibold leading-none">
+          <span className="leading-none">
+            <span className="block font-display text-xl font-semibold tracking-normal">
               GlowUp
             </span>
-            <span className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
+            <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-muted-foreground">
               Salon & Spa
             </span>
           </span>
         </Link>
 
-        <div className="hidden items-center gap-7 lg:flex">
+        <div className="hidden items-center rounded-full bg-white/55 px-2 py-1 lg:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-semibold text-foreground/78 transition hover:text-primary"
+              className="rounded-full px-4 py-2 text-sm font-semibold text-foreground/74 transition hover:bg-white hover:text-primary"
             >
               {item.label}
             </Link>
@@ -59,24 +59,20 @@ export function Navbar() {
       </nav>
 
       {isOpen ? (
-        <div className="border-t border-border bg-background/96 px-4 pb-5 pt-2 shadow-soft lg:hidden">
-          <div className="mx-auto flex max-w-7xl flex-col gap-1">
+        <div className="section-shell mt-2 lg:hidden">
+          <div className="glass-panel rounded-[1.75rem] p-3">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="rounded-2xl px-4 py-3 text-sm font-semibold transition hover:bg-white"
+                className="block rounded-2xl px-4 py-3 text-sm font-semibold transition hover:bg-white"
               >
                 {item.label}
               </Link>
             ))}
-            <Link
-              href="#booking"
-              onClick={() => setIsOpen(false)}
-              className="mt-2"
-            >
-              <Button className="w-full">Book Now</Button>
+            <Link href="#booking" onClick={() => setIsOpen(false)} className="mt-2 block">
+              <Button className="w-full">Book Your Appointment</Button>
             </Link>
           </div>
         </div>

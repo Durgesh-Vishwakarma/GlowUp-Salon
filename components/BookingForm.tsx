@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
-import { CalendarCheck, MessageCircle, Send } from "lucide-react";
+import { CalendarCheck, MessageCircle, Send, ShieldCheck, Sparkles } from "lucide-react";
 import { business, services } from "@/lib/constants";
 import { createWhatsAppUrl } from "@/lib/utils";
 import type { BookingPayload } from "@/types/booking";
@@ -46,7 +46,7 @@ export function BookingForm() {
 
     if (!form.name || !form.phone || !form.service || !form.preferredDate || !form.preferredTime) {
       setStatus("error");
-      setError("Please fill name, phone, service, preferred date and preferred time.");
+      setError("Please add your name, phone, service, preferred date and preferred time.");
       return;
     }
 
@@ -60,7 +60,7 @@ export function BookingForm() {
 
     if (!response.ok) {
       setStatus("error");
-      setError("Unable to submit right now. Please try WhatsApp booking.");
+      setError("We could not send your request right now. Please chat with us on WhatsApp.");
       return;
     }
 
@@ -69,33 +69,48 @@ export function BookingForm() {
   }
 
   return (
-    <section id="booking" className="section-padding bg-background">
-      <div className="section-shell grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+    <section id="booking" className="section-padding relative overflow-hidden bg-background">
+      <div className="absolute left-[-8rem] top-20 h-80 w-80 rounded-full bg-blush/45 blur-3xl" />
+      <div className="section-shell relative grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
         <div>
           <SectionHeader
             eyebrow="Book now"
-            title="Request an appointment in under a minute"
-            description="The form is ready for a Supabase insert later, while WhatsApp stays available for quick local-business conversion."
+            title="Reserve your glow session"
+            description="Share your preferred service and timing. Our team will call or message you to confirm the best available slot."
             align="left"
           />
-          <div className="rounded-3xl bg-primary p-6 text-primary-foreground shadow-glow">
-            <CalendarCheck className="mb-5 h-9 w-9" />
-            <p className="font-display text-3xl font-semibold">Fast follow-up</p>
-            <p className="mt-3 text-sm leading-6 text-primary-foreground/82">
-              After a booking request, the salon team can confirm the slot by call or WhatsApp.
-            </p>
-            <Link href={whatsappUrl} target="_blank" className="mt-6 inline-block">
-              <Button variant="secondary">
-                <MessageCircle className="h-4 w-4" />
-                Continue on WhatsApp
-              </Button>
-            </Link>
+          <div className="grid gap-4">
+            <div className="rounded-[2rem] bg-espresso p-6 text-white shadow-glow">
+              <CalendarCheck className="mb-5 h-9 w-9 text-accent" />
+              <p className="font-display text-3xl font-semibold">Quick confirmation</p>
+              <p className="mt-3 text-sm leading-6 text-white/68">
+                Most appointments are confirmed quickly by phone or WhatsApp during salon hours.
+              </p>
+              <Link href={whatsappUrl} target="_blank" className="mt-6 inline-block">
+                <Button variant="secondary">
+                  <MessageCircle className="h-4 w-4" />
+                  Chat on WhatsApp
+                </Button>
+              </Link>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="glass-panel rounded-3xl p-5">
+                <ShieldCheck className="mb-3 h-5 w-5 text-primary" />
+                <p className="font-semibold">Hygienic care</p>
+                <p className="mt-1 text-sm text-muted-foreground">Sanitized tools and fresh stations.</p>
+              </div>
+              <div className="glass-panel rounded-3xl p-5">
+                <Sparkles className="mb-3 h-5 w-5 text-primary" />
+                <p className="font-semibold">Personal styling</p>
+                <p className="mt-1 text-sm text-muted-foreground">Looks tailored to your occasion.</p>
+              </div>
+            </div>
           </div>
         </div>
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-[2rem] bg-white p-5 shadow-glow ring-1 ring-border/70 sm:p-7"
+          className="rounded-[2.25rem] border border-white/70 bg-white/72 p-5 shadow-glow backdrop-blur-2xl sm:p-7"
         >
           {status === "success" ? (
             <div className="mb-5 rounded-2xl border border-green-200 bg-green-50 p-4 text-sm font-semibold text-green-800">

@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --background: 34 60% 96%;
-  --foreground: 22 38% 15%;
+  --background: 34 47% 96%;
+  --foreground: 16 22% 7%;
   --card: 0 0% 100%;
-  --card-foreground: 22 38% 15%;
-  --primary: 10 43% 48%;
-  --primary-foreground: 34 60% 98%;
-  --accent: 39 66% 54%;
-  --accent-foreground: 22 38% 15%;
-  --muted: 28 44% 91%;
-  --muted-foreground: 22 19% 40%;
-  --border: 24 34% 85%;
-  --input: 24 34% 85%;
-  --ring: 10 43% 48%;
+  --card-foreground: 16 22% 7%;
+  --primary: 345 35% 47%;
+  --primary-foreground: 35 55% 97%;
+  --accent: 39 62% 60%;
+  --accent-foreground: 16 22% 7%;
+  --muted: 31 41% 89%;
+  --muted-foreground: 19 9% 42%;
+  --border: 28 31% 84%;
+  --input: 28 31% 84%;
+  --ring: 345 35% 47%;
 }
 
 * {
@@ -27,12 +27,15 @@ html {
 }
 
 body {
-  background: hsl(var(--background));
+  background:
+    radial-gradient(circle at 14% 8%, rgba(242, 200, 200, 0.38), transparent 28rem),
+    radial-gradient(circle at 92% 0%, rgba(215, 168, 90, 0.18), transparent 24rem),
+    hsl(var(--background));
   color: hsl(var(--foreground));
 }
 
 ::selection {
-  background: rgba(177, 100, 79, 0.24);
+  background: rgba(159, 79, 99, 0.24);
 }
 
 .section-shell {
@@ -41,4 +44,12 @@ body {
 
 .section-padding {
   @apply py-14 md:py-20;
+}
+
+.glass-panel {
+  @apply border border-white/60 bg-white/60 shadow-soft backdrop-blur-2xl;
+}
+
+.eyebrow {
+  @apply text-xs font-bold uppercase tracking-[0.22em] text-primary;
 }

@@ -20,10 +20,10 @@ export function SectionHeader({
         align === "center" ? "mx-auto text-center" : "text-left"
       )}
     >
-      <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-primary">
+      <p className="eyebrow mb-3">
         {eyebrow}
       </p>
-      <h2 className="font-display text-3xl font-semibold leading-tight text-foreground sm:text-4xl md:text-5xl">
+      <h2 className="font-display text-3xl font-semibold leading-[1.05] text-foreground sm:text-4xl md:text-5xl">
         {title}
       </h2>
       {description ? (

@@ -28,11 +28,15 @@ const config: Config = {
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))"
-        }
+        },
+        espresso: "#17110F",
+        champagne: "#EFE1CF",
+        blush: "#F2C8C8"
       },
       boxShadow: {
-        glow: "0 24px 70px rgba(95, 52, 39, 0.14)",
-        soft: "0 16px 45px rgba(95, 52, 39, 0.10)"
+        glow: "0 28px 90px rgba(91, 36, 50, 0.16)",
+        soft: "0 18px 55px rgba(23, 17, 15, 0.08)",
+        glass: "0 20px 70px rgba(23, 17, 15, 0.10)"
       },
       fontFamily: {
         sans: ["var(--font-inter)", "ui-sans-serif", "system-ui"],
