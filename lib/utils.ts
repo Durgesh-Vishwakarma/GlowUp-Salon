@@ -6,5 +6,8 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function createWhatsAppUrl(message: string, phone: string) {
-  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  const cleanPhone = phone.replace(/\D/g, "");
+  const encodedMessage = encodeURIComponent(message.trim());
+
+  return `https://wa.me/${cleanPhone}?text=${encodedMessage}`;
 }

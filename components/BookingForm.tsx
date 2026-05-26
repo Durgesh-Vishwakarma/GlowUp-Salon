@@ -25,7 +25,7 @@ const initialForm: BookingPayload = {
   message: ""
 };
 
-export function BookingForm() {
+export function BookingStrip() {
   const [form, setForm] = useState<BookingPayload>(initialForm);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [error, setError] = useState("");
@@ -67,25 +67,29 @@ export function BookingForm() {
   }
 
   return (
-    <section id="booking" className="bg-[#111315] px-6 py-7 text-white lg:px-14">
+    <section id="booking" className="bg-[#111315] px-5 py-8 text-white sm:px-6 lg:px-12">
       <form
         onSubmit={handleSubmit}
-        className="mx-auto grid w-full max-w-[1680px] gap-5 xl:grid-cols-[280px_1fr]"
+        className="mx-auto grid w-full max-w-[1500px] gap-6 xl:grid-cols-[310px_1fr] xl:items-start"
       >
         <div>
-          <p className="mb-2 text-[11px] font-bold uppercase tracking-[0.28em] text-[#b77b56]">
+          <p className="mb-3 text-[11px] font-bold uppercase tracking-[0.28em] text-[#B87955]">
             Book your appointment
           </p>
-          <h2 className="font-display text-3xl leading-tight">Your Beauty. Our Priority.</h2>
-          <p className="mt-2 max-w-sm text-sm leading-5 text-white/65">
+          <h2 className="font-display text-3xl leading-tight md:text-4xl">
+            Your Beauty.
+            <br />
+            Our Priority.
+          </h2>
+          <p className="mt-3 max-w-sm text-sm leading-6 text-white/62">
             Fill in your details and our team will get back to you to confirm your appointment.
           </p>
         </div>
 
         <div className="grid gap-4">
-          {(status === "success" || error) ? (
+          {status === "success" || error ? (
             <div
-              className={`rounded-[4px] border px-4 py-3 text-sm font-medium ${
+              className={`border px-4 py-3 text-sm font-medium ${
                 status === "success"
                   ? "border-green-400/30 bg-green-400/10 text-green-100"
                   : "border-red-400/30 bg-red-400/10 text-red-100"
@@ -96,7 +100,11 @@ export function BookingForm() {
                   ? "Thank you! Our team will contact you shortly to confirm your appointment."
                   : error}
               </p>
-              <Link href={whatsappUrl} target="_blank" className="mt-2 inline-flex items-center gap-2 text-white">
+              <Link
+                href={whatsappUrl}
+                target="_blank"
+                className="mt-2 inline-flex items-center gap-2 text-white"
+              >
                 <MessageCircle className="h-4 w-4 text-[#25D366]" />
                 Book on WhatsApp
               </Link>
@@ -111,9 +119,9 @@ export function BookingForm() {
                 onChange={(event) => setForm({ ...form, name: event.target.value })}
                 placeholder="Full Name"
                 required
-                className="rounded-[4px] border-white/18 bg-transparent pr-11 text-white placeholder:text-white/60 focus:border-[#b77b56]"
+                className="rounded-none border-white/18 bg-transparent pr-11 text-white placeholder:text-white/56 focus:border-[#B87955] focus:ring-[#B87955]/10"
               />
-              <UserRound className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white/45" />
+              <UserRound className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white/42" />
             </label>
 
             <label className="relative">
@@ -124,9 +132,9 @@ export function BookingForm() {
                 placeholder="Phone Number"
                 type="tel"
                 required
-                className="rounded-[4px] border-white/18 bg-transparent pr-11 text-white placeholder:text-white/60 focus:border-[#b77b56]"
+                className="rounded-none border-white/18 bg-transparent pr-11 text-white placeholder:text-white/56 focus:border-[#B87955] focus:ring-[#B87955]/10"
               />
-              <Phone className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white/45" />
+              <Phone className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white/42" />
             </label>
 
             <label>
@@ -136,7 +144,7 @@ export function BookingForm() {
                 onValueChange={(value) => setForm({ ...form, service: value })}
                 required
               >
-                <SelectTrigger className="rounded-[4px] border-white/18 bg-transparent text-white focus:border-[#b77b56]">
+                <SelectTrigger className="rounded-none border-white/18 bg-transparent text-white focus:border-[#B87955] focus:ring-[#B87955]/10">
                   <SelectValue placeholder="Service" />
                 </SelectTrigger>
                 <SelectContent>
@@ -156,9 +164,9 @@ export function BookingForm() {
                 onChange={(event) => setForm({ ...form, preferredDate: event.target.value })}
                 type="date"
                 required
-                className="rounded-[4px] border-white/18 bg-transparent pr-11 text-white focus:border-[#b77b56]"
+                className="rounded-none border-white/18 bg-transparent pr-11 text-white focus:border-[#B87955] focus:ring-[#B87955]/10"
               />
-              <CalendarDays className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white/45" />
+              <CalendarDays className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white/42" />
             </label>
 
             <label className="relative">
@@ -168,14 +176,14 @@ export function BookingForm() {
                 onChange={(event) => setForm({ ...form, preferredTime: event.target.value })}
                 type="time"
                 required
-                className="rounded-[4px] border-white/18 bg-transparent pr-11 text-white focus:border-[#b77b56]"
+                className="rounded-none border-white/18 bg-transparent pr-11 text-white focus:border-[#B87955] focus:ring-[#B87955]/10"
               />
-              <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white/45" />
+              <ChevronDown className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white/42" />
             </label>
 
             <Button
               type="submit"
-              className="h-[52px] rounded-[4px] bg-[#76022a] px-5 shadow-none hover:bg-[#62001f]"
+              className="h-[52px] rounded-none bg-[#76022A] px-5 shadow-none hover:bg-[#62001F]"
               disabled={status === "loading"}
             >
               {status === "loading" ? "Sending..." : "Book Appointment"}
@@ -185,7 +193,7 @@ export function BookingForm() {
           <Link
             href={whatsappUrl}
             target="_blank"
-            className="flex items-center justify-center gap-2 text-sm text-white/70 transition hover:text-white"
+            className="flex items-center justify-center gap-2 text-sm text-white/68 transition hover:text-white xl:justify-start"
           >
             <MessageCircle className="h-5 w-5 text-[#25D366]" />
             Prefer WhatsApp? Click to chat with us instantly.

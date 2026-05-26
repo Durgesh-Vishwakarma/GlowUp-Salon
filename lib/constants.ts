@@ -26,7 +26,7 @@ export const business = {
   location: "Bandra West, Mumbai",
   tagline: "Look confident. Feel beautiful.",
   description:
-    "Premium hair, skin, bridal and spa services in Bandra with expert care, refined interiors and easy appointment booking.",
+    "Premium Hair, Skin, Bridal & Spa Services in Bandra crafted with expertise and the finest products. Book your appointment in seconds.",
   shortDescription:
     "A premium beauty destination for polished hair, luminous skin, bridal glam, nails and spa rituals in Bandra West.",
   phone: salonContact.phone,
@@ -36,26 +36,34 @@ export const business = {
   whatsappMessage: "Hi GlowUp Salon, I want to book an appointment."
 };
 
+export const heroImage = {
+  src: "https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  alt: "Premium salon hair wash treatment with warm lighting"
+};
+
 export const navItems = [
-  { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
-  { label: "Pricing", href: "#pricing" },
+  { label: "Experience", href: "#experience" },
   { label: "Gallery", href: "#gallery" },
-  { label: "Offers", href: "#offers" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Contact", href: "#contact" }
+  { label: "Book", href: "#booking" },
 ];
 
-export const trustBadges = [
-  { label: "4.9★ Rating", value: "Loved by 500+ clients", icon: Star },
-  { label: "10+ Experts", value: "Hair, skin and bridal artists", icon: Sparkles },
-  { label: "Open 7 Days", value: "Appointments from 10 AM", icon: Clock }
-];
-
-export const heroStats = [
-  { label: "4.9★ Rating", value: "Trusted beauty care" },
-  { label: "500+ Happy Clients", value: "Bandra favourites" },
-  { label: "Instant WhatsApp Booking", value: "Quick slot confirmation" }
+export const trustStats = [
+  {
+    label: "4.9 / 5",
+    value: "Google Rating",
+    icon: Star
+  },
+  {
+    label: "12K+",
+    value: "Happy Clients",
+    icon: UsersRound
+  },
+  {
+    label: "Instant Booking",
+    value: "via WhatsApp",
+    icon: MessageCircle
+  }
 ];
 
 export const services = [
@@ -97,6 +105,15 @@ export const services = [
   }
 ];
 
+export const serviceTiles = [
+  { title: "Hair", subtitle: "Care", icon: Scissors },
+  { title: "Skin", subtitle: "Treatments", icon: Sparkles },
+  { title: "Bridal", subtitle: "Packages", icon: Wand2 },
+  { title: "Nail", subtitle: "Studio", icon: Palette },
+  { title: "Spa &", subtitle: "Wellness", icon: HeartHandshake },
+  { title: "Makeup", subtitle: "Studio", icon: Sparkles }
+];
+
 export const reasons = [
   {
     title: "Expert artists",
@@ -132,7 +149,7 @@ export const pricing = [
 export const editorialPricing = [
   { service: "Keratin Smoothening", price: "₹6,999" },
   { service: "HydraFacial Treatment", price: "₹5,499" },
-  { service: "Bridal Makeup (Premium)", price: "₹24,999" },
+  { service: "Bridal Makeup Premium", price: "₹24,999" },
   { service: "Aroma Therapy Massage", price: "₹3,999" },
   { service: "Gel Extensions", price: "₹2,999" }
 ];
@@ -142,98 +159,112 @@ export const offers = [
     title: "New Client Offer",
     description: "Get 20% off on your first salon visit.",
     label: "First Visit",
-    cta: "Claim Offer"
+    cta: "Claim Offer",
+    icon: TicketPercent
   },
   {
-    title: "Bridal Trial Package",
-    description: "Book bridal consultation and trial makeup at special pricing.",
+    title: "Bridal Package",
+    description: "Special bridal consultation discounts when you book in advance.",
     label: "Bridal",
-    cta: "Plan My Look"
+    cta: "Plan My Look",
+    icon: Wand2
   },
   {
-    title: "Weekend Glow Combo",
-    description: "Facial + Hair Spa combo starting at ₹2,999.",
-    label: "Weekend",
-    cta: "Book Combo"
+    title: "Refer & Earn",
+    description: "Refer a friend and get ₹500 off on your next visit.",
+    label: "Referral",
+    cta: "Refer Now",
+    icon: UsersRound
   }
 ];
 
 export const editorialOffers = [
   {
     title: "20% OFF",
-    description: "On your first visit / New clients only",
+    subtitle: "On your first visit",
+    description: "New clients only",
     icon: TicketPercent
   },
   {
     title: "Bridal Package",
-    description: "Special discounts / Book in advance",
-    icon: Gem
+    subtitle: "Special discounts",
+    description: "Book in advance",
+    icon: Wand2
   },
   {
     title: "Refer & Earn",
-    description: "Refer a friend & get ₹500 off",
+    subtitle: "Refer a friend &",
+    description: "get ₹500 off",
     icon: UsersRound
   }
 ];
 
 export const galleryImages = [
   {
-    title: "Salon Interior",
-    category: "Interior",
-    src: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80"
+    title: "Aesthetic Salon Details",
+    category: "Atmosphere",
+    src: "https://images.pexels.com/photos/3993320/pexels-photo-3993320.jpeg?auto=compress&cs=tinysrgb&w=1200"
   },
   {
     title: "Hair Styling",
     category: "Hair",
-    src: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80"
+    src: "https://images.pexels.com/photos/3992874/pexels-photo-3992874.jpeg?auto=compress&cs=tinysrgb&w=1200"
   },
   {
-    title: "Bridal Makeup",
+    title: "Bridal Details",
     category: "Bridal",
-    src: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1200&q=80"
+    src: "https://images.pexels.com/photos/3373721/pexels-photo-3373721.jpeg?auto=compress&cs=tinysrgb&w=1200"
   },
   {
-    title: "Nail Art",
+    title: "Manicure Setup",
     category: "Nails",
-    src: "https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1200&q=80"
+    src: "https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg?auto=compress&cs=tinysrgb&w=1200"
   },
   {
-    title: "Facial Treatment",
+    title: "Skin Rituals",
     category: "Skin",
-    src: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80"
+    src: "https://images.pexels.com/photos/3985329/pexels-photo-3985329.jpeg?auto=compress&cs=tinysrgb&w=1200"
   },
   {
-    title: "Beauty Products",
-    category: "Products",
-    src: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1200&q=80"
-  },
-  {
-    title: "Spa Rituals",
+    title: "Spa Essentials",
     category: "Spa",
-    src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80"
+    src: "https://images.pexels.com/photos/3757952/pexels-photo-3757952.jpeg?auto=compress&cs=tinysrgb&w=1200"
   },
   {
-    title: "Premium Care",
+    title: "Premium Products",
     category: "Care",
-    src: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1200&q=80"
+    src: "https://images.pexels.com/photos/3735657/pexels-photo-3735657.jpeg?auto=compress&cs=tinysrgb&w=1200"
+  },
+  {
+    title: "Relaxation Lounge",
+    category: "Interior",
+    src: "https://images.pexels.com/photos/5240677/pexels-photo-5240677.jpeg?auto=compress&cs=tinysrgb&w=1200"
   }
 ];
 
+export const galleryPreviewImages = galleryImages.slice(0, 6);
+
 export const testimonials = [
   {
-    quote: "The booking was easy and the staff was very professional.",
-    name: "Priya S.",
-    initials: "PS"
+    quote:
+      "Absolutely loved the experience! The staff is professional, warm and the results are always amazing.",
+    name: "Ananya Mehta",
+    location: "Bandra, Mumbai",
+    initials: "AM"
   },
   {
-    quote: "Loved the bridal makeup trial. The team understood exactly what I wanted.",
-    name: "Riya M.",
+    quote:
+      "The bridal consultation felt personal, calm and premium. They understood exactly what I wanted.",
+    name: "Riya Malhotra",
+    location: "Mumbai",
     initials: "RM"
   },
   {
-    quote: "Clean salon, great service and easy WhatsApp appointment.",
-    name: "Ananya K.",
-    initials: "AK"
+    quote:
+      "Clean salon, beautiful interiors and very easy WhatsApp appointment booking.",
+    name: "Priya Shah",
+    location: "Bandra West",
+    initials: "PS"
   }
 ];
 

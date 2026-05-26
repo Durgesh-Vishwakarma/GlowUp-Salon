@@ -1,76 +1,188 @@
 import Link from "next/link";
-import { Instagram, MessageCircle, Sparkles } from "lucide-react";
-import { business, navItems, services } from "@/lib/constants";
+import { Instagram, MapPin, Clock, Phone, MessageCircle, ArrowRight } from "lucide-react";
+import { business, services } from "@/lib/constants";
 import { createWhatsAppUrl } from "@/lib/utils";
 
 export function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="relative overflow-hidden bg-espresso text-background">
-      <div className="absolute left-[-9rem] top-0 h-80 w-80 rounded-full bg-primary/30 blur-3xl" />
-      <div className="section-shell relative grid gap-10 py-14 md:grid-cols-[1.2fr_0.8fr_0.8fr]">
-        <div>
-          <div className="flex items-center gap-3">
-            <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-accent">
-              <Sparkles className="h-5 w-5" />
-            </span>
-            <div>
-              <p className="font-display text-3xl font-semibold">{business.name}</p>
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-background/52">
-                Bandra West
-              </p>
-            </div>
+    <footer style={{ backgroundColor: "#0D0D0D", color: "#fff" }}>
+
+      {/* ── Top CTA Banner ── */}
+      <div
+        className="border-b"
+        style={{ borderColor: "rgba(255,255,255,0.08)", backgroundColor: "#7C1034" }}
+      >
+        <div className="mx-auto flex w-full max-w-[1380px] flex-col items-center justify-between gap-5 px-6 py-8 sm:flex-row sm:px-10 lg:px-14">
+          <div>
+            <p className="font-display font-bold text-white" style={{ fontSize: "26px", lineHeight: 1.2 }}>
+              Ready to look your best?
+            </p>
+            <p className="mt-1 text-white/70" style={{ fontSize: "15px" }}>
+              Book your appointment today — it only takes 30 seconds.
+            </p>
           </div>
-          <p className="mt-5 max-w-md text-sm leading-6 text-background/68">
+          <Link
+            href="#booking"
+            className="inline-flex h-[52px] shrink-0 items-center gap-2 border-2 border-white bg-transparent px-8 font-bold text-white transition hover:bg-white hover:text-[#7C1034]"
+            style={{ fontSize: "14px" }}
+          >
+            Book Now
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </div>
+
+      {/* ── Main Footer Grid ── */}
+      <div className="mx-auto grid w-full max-w-[1380px] gap-12 px-6 py-16 sm:px-10 lg:grid-cols-[1.8fr_1fr_1fr_1fr] lg:px-14 lg:py-20">
+
+        {/* Brand column */}
+        <div>
+          <Link href="#home" aria-label="GlowUp Salon" className="inline-block">
+            <span
+              className="block font-display font-bold text-white"
+              style={{ fontSize: "34px", lineHeight: 1, letterSpacing: "-0.01em" }}
+            >
+              GlowUp
+            </span>
+            <span
+              className="block font-sans font-semibold uppercase text-[#B8733A]"
+              style={{ fontSize: "10px", letterSpacing: "0.35em", marginTop: "4px" }}
+            >
+              Salon &amp; Spa
+            </span>
+          </Link>
+
+          <p
+            className="mt-6 leading-relaxed"
+            style={{ fontSize: "15px", color: "rgba(255,255,255,0.48)", maxWidth: "280px" }}
+          >
             {business.shortDescription}
           </p>
-          <div className="mt-6 flex gap-3">
+
+          {/* Social icons */}
+          <div className="mt-7 flex gap-3">
             <Link
               href={business.instagram}
-              aria-label="Instagram"
-              className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/18"
+              aria-label="Follow on Instagram"
+              className="flex h-11 w-11 items-center justify-center border text-white/50 transition-all hover:border-[#B8733A] hover:text-[#B8733A]"
+              style={{ borderColor: "rgba(255,255,255,0.14)" }}
             >
               <Instagram className="h-5 w-5" />
             </Link>
             <Link
               href={createWhatsAppUrl(business.whatsappMessage, business.phoneRaw)}
               target="_blank"
-              aria-label="WhatsApp"
-              className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/18"
+              rel="noopener noreferrer"
+              aria-label="Chat on WhatsApp"
+              className="flex h-11 w-11 items-center justify-center border text-white/50 transition-all hover:border-[#25D366] hover:text-[#25D366]"
+              style={{ borderColor: "rgba(255,255,255,0.14)" }}
             >
               <MessageCircle className="h-5 w-5" />
             </Link>
           </div>
         </div>
 
+        {/* Services column */}
         <div>
-          <p className="mb-4 font-semibold text-white">Services</p>
-          <div className="grid gap-2 text-sm text-background/68">
-            {services.slice(0, 5).map((service) => (
-              <Link key={service.title} href="#services" className="transition hover:text-white">
-                {service.title}
-              </Link>
+          <p
+            className="mb-6 font-sans font-bold uppercase"
+            style={{ fontSize: "11px", letterSpacing: "0.28em", color: "#B8733A" }}
+          >
+            Services
+          </p>
+          <ul className="flex flex-col gap-3">
+            {services.map((s) => (
+              <li key={s.title}>
+                <Link
+                  href="#services"
+                  className="transition-colors hover:text-white"
+                  style={{ fontSize: "15px", color: "rgba(255,255,255,0.50)" }}
+                >
+                  {s.title}
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
 
+        {/* Quick Links column */}
         <div>
-          <p className="mb-4 font-semibold text-white">Contact</p>
-          <div className="grid gap-2 text-sm text-background/68">
-            <span>{business.location}</span>
-            <span>{business.phone}</span>
-            <span>{business.timing}</span>
-          </div>
-          <div className="mt-5 flex flex-wrap gap-3 text-sm">
-            {navItems.slice(0, 4).map((item) => (
-              <Link key={item.href} href={item.href} className="transition hover:text-white">
-                {item.label}
-              </Link>
+          <p
+            className="mb-6 font-sans font-bold uppercase"
+            style={{ fontSize: "11px", letterSpacing: "0.28em", color: "#B8733A" }}
+          >
+            Quick Links
+          </p>
+          <ul className="flex flex-col gap-3">
+            {[
+              { label: "Home", href: "#home" },
+              { label: "Our Services", href: "#services" },
+              { label: "Gallery", href: "#gallery" },
+              { label: "Book Appointment", href: "#booking" },
+            ].map((l) => (
+              <li key={l.label}>
+                <Link
+                  href={l.href}
+                  className="transition-colors hover:text-white"
+                  style={{ fontSize: "15px", color: "rgba(255,255,255,0.50)" }}
+                >
+                  {l.label}
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
+        </div>
+
+        {/* Contact column */}
+        <div>
+          <p
+            className="mb-6 font-sans font-bold uppercase"
+            style={{ fontSize: "11px", letterSpacing: "0.28em", color: "#B8733A" }}
+          >
+            Contact Us
+          </p>
+          <ul className="flex flex-col gap-5">
+            <li className="flex items-start gap-3">
+              <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#B8733A]" strokeWidth={1.5} />
+              <span style={{ fontSize: "15px", color: "rgba(255,255,255,0.50)", lineHeight: 1.6 }}>
+                {business.location}
+              </span>
+            </li>
+            <li className="flex items-center gap-3">
+              <Phone className="h-5 w-5 shrink-0 text-[#B8733A]" strokeWidth={1.5} />
+              <a
+                href={`tel:${business.phoneRaw}`}
+                className="transition-colors hover:text-white"
+                style={{ fontSize: "15px", color: "rgba(255,255,255,0.50)" }}
+              >
+                {business.phone}
+              </a>
+            </li>
+            <li className="flex items-start gap-3">
+              <Clock className="mt-0.5 h-5 w-5 shrink-0 text-[#B8733A]" strokeWidth={1.5} />
+              <span style={{ fontSize: "15px", color: "rgba(255,255,255,0.50)", lineHeight: 1.6 }}>
+                {business.timing}
+              </span>
+            </li>
+          </ul>
         </div>
       </div>
-      <div className="relative border-t border-white/10 py-5 text-center text-xs text-background/56">
-        © {new Date().getFullYear()} GlowUp Salon & Spa. All rights reserved.
+
+      {/* ── Bottom Bar ── */}
+      <div
+        className="border-t px-6 py-5 sm:px-10 lg:px-14"
+        style={{ borderColor: "rgba(255,255,255,0.08)" }}
+      >
+        <div className="mx-auto flex w-full max-w-[1380px] flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
+          <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.30)" }}>
+            © {year} GlowUp Salon &amp; Spa · Bandra West, Mumbai · All rights reserved.
+          </p>
+          <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.22)" }}>
+            Designed for premium salon experience
+          </p>
+        </div>
       </div>
     </footer>
   );

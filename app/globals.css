@@ -2,54 +2,120 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Design Tokens ───────────────────────────────────── */
 :root {
-  --background: 34 47% 96%;
-  --foreground: 16 22% 7%;
-  --card: 0 0% 100%;
-  --card-foreground: 16 22% 7%;
-  --primary: 345 35% 47%;
-  --primary-foreground: 35 55% 97%;
-  --accent: 39 62% 60%;
-  --accent-foreground: 16 22% 7%;
-  --muted: 31 41% 89%;
-  --muted-foreground: 19 9% 42%;
-  --border: 28 31% 84%;
-  --input: 28 31% 84%;
-  --ring: 345 35% 47%;
+  --bg:           #FFFFFF;
+  --bg-alt:       #F7F3EF;
+  --bg-dark:      #0D0D0D;
+
+  --text:         #0A0909;
+  --text-muted:   #5E5555;
+  --text-subtle:  #9A8F8A;
+
+  --wine:         #7C1034;
+  --wine-dark:    #5A0926;
+  --copper:       #B8733A;
+  --copper-light: #D4975C;
+
+  --border:       #E2D8D0;
+  --border-dark:  rgba(255,255,255,0.10);
+
+  --card-shadow:  0 4px 24px rgba(0,0,0,0.08);
+  --hover-shadow: 0 12px 48px rgba(124,16,52,0.14);
 }
 
-* {
-  border-color: hsl(var(--border));
+/* ─── Base Reset ──────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+  font-size: 17px;           /* base = 17px, so 1rem = 17px */
 }
 
 body {
-  background:
-    radial-gradient(circle at 14% 8%, rgba(242, 200, 200, 0.38), transparent 28rem),
-    radial-gradient(circle at 92% 0%, rgba(215, 168, 90, 0.18), transparent 24rem),
-    hsl(var(--background));
-  color: hsl(var(--foreground));
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background: rgba(159, 79, 99, 0.24);
+  background: var(--wine);
+  color: #ffffff;
 }
 
-.section-shell {
-  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+/* ─── Layout Helpers ──────────────────────────────────── */
+.container-xl {
+  @apply mx-auto w-full max-w-[1380px] px-6 sm:px-10 lg:px-14;
 }
 
-.section-padding {
-  @apply py-14 md:py-20;
+/* ─── Typography Scale ────────────────────────────────── */
+
+/* Eyebrow labels */
+.label-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--wine);
 }
 
-.glass-panel {
-  @apply border border-white/60 bg-white/60 shadow-soft backdrop-blur-2xl;
+.label-eyebrow-copper {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--copper);
 }
 
-.eyebrow {
-  @apply text-xs font-bold uppercase tracking-[0.22em] text-primary;
+/* Section title helpers */
+.heading-display {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-weight: 700;
+  line-height: 1.07;
+  letter-spacing: -0.01em;
+  color: var(--text);
 }
+
+/* ─── Shared Utilities ────────────────────────────────── */
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2;
+  height: 52px;
+  padding: 0 2rem;
+  background-color: var(--wine);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: background-color 0.2s;
+}
+.btn-primary:hover { background-color: var(--wine-dark); }
+
+.btn-outline {
+  @apply inline-flex items-center justify-center gap-2;
+  height: 52px;
+  padding: 0 2rem;
+  border: 2px solid var(--wine);
+  color: var(--wine);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: background-color 0.2s, color 0.2s;
+}
+.btn-outline:hover { background-color: var(--wine); color: #fff; }
+
+/* ─── Input resets for dark sections ─────────────────── */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(0.6);
+  cursor: pointer;
+}
+
+/* ─── Misc ────────────────────────────────────────────── */
+.text-balance { text-wrap: balance; }
