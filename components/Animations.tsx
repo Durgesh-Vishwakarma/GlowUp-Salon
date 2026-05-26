@@ -17,49 +17,16 @@ export function RevealText({ text, className = "", delay = 0 }: RevealTextProps)
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-10%" });
 
-  const words = text.split(" ");
-
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.08, delayChildren: delay },
-    },
-  };
-
-  const child = {
-    hidden: {
-      opacity: 0,
-      y: "100%",
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, ease: [0.33, 1, 0.68, 1] },
-    },
-  };
-
   return (
     <motion.span
       ref={ref}
-      variants={container}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
+      initial={{ opacity: 0, y: 15 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
+      transition={{ duration: 0.8, delay: delay, ease: [0.33, 1, 0.68, 1] }}
       className={className}
-      style={{ display: "inline-flex", flexWrap: "wrap", margin: 0, padding: 0 }}
-      aria-label={text}
+      style={{ display: "inline-block" }}
     >
-      {words.map((word, index) => (
-        <span
-          key={index}
-          style={{ overflow: "hidden", display: "inline-block", marginRight: "0.25em" }}
-          aria-hidden="true"
-        >
-          <motion.span variants={child} style={{ display: "inline-block" }}>
-            {word}
-          </motion.span>
-        </span>
-      ))}
+      {text}
     </motion.span>
   );
 }
@@ -80,15 +47,9 @@ export function ImageReveal({ children, className = "", delay = 0 }: ImageReveal
   return (
     <div ref={ref} className={`relative overflow-hidden ${className}`}>
       <motion.div
-        initial={{ y: "0%" }}
-        animate={isInView ? { y: "-100%" } : { y: "0%" }}
-        transition={{ duration: 1.2, delay: delay, ease: [0.77, 0, 0.175, 1] }}
-        className="absolute inset-0 z-20 bg-[#F7F3EF]"
-      />
-      <motion.div
-        initial={{ scale: 1.15 }}
-        animate={isInView ? { scale: 1 } : { scale: 1.15 }}
-        transition={{ duration: 1.4, delay: delay, ease: [0.77, 0, 0.175, 1] }}
+        initial={{ scale: 1.1, opacity: 0 }}
+        animate={isInView ? { scale: 1, opacity: 1 } : { scale: 1.1, opacity: 0 }}
+        transition={{ duration: 1.2, delay: delay, ease: [0.33, 1, 0.68, 1] }}
         className="h-full w-full"
       >
         {children}

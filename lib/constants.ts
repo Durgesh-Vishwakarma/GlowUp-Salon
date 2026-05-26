@@ -37,8 +37,8 @@ export const business = {
 };
 
 export const heroImage = {
-  src: "https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  alt: "Premium salon hair wash treatment with warm lighting"
+  src: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=90",
+  alt: "Premium salon interior with warm aesthetic lighting"
 };
 
 export const navItems = [

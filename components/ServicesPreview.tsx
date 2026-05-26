@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { services } from "@/lib/constants";
-import { MagneticWrapper } from "./MagneticWrapper";
 import { RevealText, EyebrowReveal } from "./Animations";
 
 export function ServicesPreview() {
@@ -129,12 +128,10 @@ export function ServicesPreview() {
 
         {/* Bottom CTA */}
         <div className="mt-14 flex flex-col items-center gap-3 sm:flex-row sm:justify-center relative z-10">
-          <MagneticWrapper strength={15}>
-            <Link href="#booking" id="services-book-cta" className="btn-primary">
-              Book Any Service
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </MagneticWrapper>
+          <Link href="#booking" id="services-book-cta" className="btn-primary">
+            Book Any Service
+            <ArrowRight className="h-4 w-4" />
+          </Link>
           <p style={{ fontSize: "14px", color: "#9A8F8A" }}>or chat on WhatsApp for instant booking</p>
         </div>
       </div>

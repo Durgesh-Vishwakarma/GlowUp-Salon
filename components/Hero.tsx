@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { ArrowRight, MessageCircle, Star, Users } from "lucide-react";
 import { business, heroImage } from "@/lib/constants";
 import { createWhatsAppUrl } from "@/lib/utils";
-import { MagneticWrapper } from "./MagneticWrapper";
 import { RevealText, EyebrowReveal, ImageReveal } from "./Animations";
 
 const TRUST = [
@@ -73,17 +72,13 @@ export function Hero() {
           </p>
 
           <div className="relative z-10 mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <MagneticWrapper strength={15}>
-              <Link href="#booking" id="hero-book-cta" className="btn-primary">
-                Book Appointment
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </MagneticWrapper>
-            <MagneticWrapper strength={15}>
-              <Link href="#services" id="hero-services-cta" className="btn-outline">
-                View Services
-              </Link>
-            </MagneticWrapper>
+            <Link href="#booking" id="hero-book-cta" className="btn-primary">
+              Book Appointment
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link href="#services" id="hero-services-cta" className="btn-outline">
+              View Services
+            </Link>
           </div>
 
           <div className="mt-11 flex flex-col gap-6 sm:flex-row sm:gap-0">
@@ -151,7 +146,6 @@ export function Hero() {
               />
             </motion.div>
           </ImageReveal>
-          <div className="absolute inset-y-0 left-0 hidden w-16 bg-gradient-to-r from-white to-transparent lg:block" />
         </div>
       </div>
     </section>

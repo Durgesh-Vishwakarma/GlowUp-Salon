@@ -68,7 +68,7 @@ export function Experience() {
           <ImageReveal className="h-full w-full">
             <motion.div className="absolute inset-x-0 -top-[10%] h-[120%] w-full">
               <Image
-                src="https://images.pexels.com/photos/3997985/pexels-photo-3997985.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=90"
                 alt="GlowUp Salon interior experience"
                 fill
                 className="object-cover"
