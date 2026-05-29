@@ -78,6 +78,14 @@ export function BookingSection() {
       setError("Please enter a valid 10-digit phone number.");
       return;
     }
+    let whatsappWindow: Window | null = null;
+    if (typeof window !== "undefined") {
+      whatsappWindow = window.open("about:blank", "_blank");
+      if (whatsappWindow) {
+        whatsappWindow.opener = null;
+      }
+    }
+
     setStatus("loading");
     const res = await fetch("/api/bookings", {
       method: "POST",
@@ -85,6 +93,7 @@ export function BookingSection() {
       body: JSON.stringify(form),
     });
     if (!res.ok) {
+      whatsappWindow?.close();
       setStatus("error");
       setError("Something went wrong. Please chat with us on WhatsApp instead.");
       return;
@@ -97,7 +106,12 @@ export function BookingSection() {
     setStatus("success");
     setForm(initialForm);
 
-    window.open(finalWhatsAppUrl, "_blank", "noopener,noreferrer");
+    if (whatsappWindow) {
+      whatsappWindow.location.href = finalWhatsAppUrl;
+      whatsappWindow.focus();
+    } else {
+      window.location.href = finalWhatsAppUrl;
+    }
   }
 
   return (
