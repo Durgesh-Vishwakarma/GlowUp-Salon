@@ -28,6 +28,23 @@ const TIME_SLOTS = [
   "6:00 PM",  "7:00 PM",  "8:00 PM",
 ];
 
+function createBookingWhatsAppMessage(form: BookingPayload) {
+  return [
+    "New booking request from GlowUp Salon website:",
+    "",
+    `Name: ${form.name}`,
+    `Phone: ${form.phone}`,
+    `Service: ${form.service}`,
+    `Preferred Date: ${form.preferredDate}`,
+    `Preferred Time: ${form.preferredTime}`,
+    form.message ? `Message: ${form.message}` : "",
+    "",
+    "Please confirm my appointment.",
+  ]
+    .filter(Boolean)
+    .join("\n");
+}
+
 /* shared input class */
 const inputCls =
   "h-[52px] w-full border px-4 text-white placeholder:text-white/38 focus:outline-none transition-colors duration-200";
@@ -40,10 +57,12 @@ export function BookingSection() {
   const [error, setError]   = useState("");
 
   const whatsappUrl = useMemo(() => {
-    const msg = form.name
-      ? `Hi GlowUp Salon, I want to book ${form.service || "a service"} for ${form.name}. Date: ${form.preferredDate || "TBD"}, Time: ${form.preferredTime || "TBD"}.`
-      : business.whatsappMessage;
-    return createWhatsAppUrl(msg, business.phoneRaw);
+    const message =
+      form.name && form.phone && form.service && form.preferredDate && form.preferredTime
+        ? createBookingWhatsAppMessage(form)
+        : business.whatsappMessage;
+
+    return createWhatsAppUrl(message, business.phoneRaw);
   }, [form]);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -70,8 +89,15 @@ export function BookingSection() {
       setError("Something went wrong. Please chat with us on WhatsApp instead.");
       return;
     }
+    const finalWhatsAppUrl = createWhatsAppUrl(
+      createBookingWhatsAppMessage(form),
+      business.phoneRaw
+    );
+
     setStatus("success");
     setForm(initialForm);
+
+    window.open(finalWhatsAppUrl, "_blank", "noopener,noreferrer");
   }
 
   return (
@@ -154,7 +180,7 @@ export function BookingSection() {
                 Booking Received!
               </h3>
               <p style={{ fontSize: "16px", color: "rgba(255,255,255,0.52)", maxWidth: "340px", lineHeight: 1.7 }}>
-                Thank you! Our team will contact you shortly to confirm.
+                Thank you! WhatsApp has opened with your booking details. Please tap Send so our team receives your appointment request.
               </p>
               <Link href={whatsappUrl} target="_blank"
                 className="mt-1 inline-flex items-center gap-2 font-semibold text-[#25D366] hover:opacity-80"

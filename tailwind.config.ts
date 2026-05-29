@@ -39,8 +39,8 @@ const config: Config = {
         glass: "0 20px 70px rgba(23, 17, 15, 0.10)"
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "ui-sans-serif", "system-ui"],
-        display: ["var(--font-playfair)", "Georgia", "serif"]
+        sans: ["Inter", "Manrope", "ui-sans-serif", "system-ui"],
+        display: ["Playfair Display", "Cormorant Garamond", "Georgia", "serif"]
       },
       borderRadius: {
         "4xl": "2rem"

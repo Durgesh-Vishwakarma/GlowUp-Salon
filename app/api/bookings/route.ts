@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { isSupabaseConfigured, supabase } from "@/lib/supabase";
 import type { BookingPayload } from "@/types/booking";
 
 const requiredFields: Array<keyof BookingPayload> = [
@@ -12,8 +13,38 @@ const requiredFields: Array<keyof BookingPayload> = [
 function isValidBookingPayload(data: Partial<BookingPayload>) {
   return requiredFields.every((field) => {
     const value = data[field];
-
     return typeof value === "string" && value.trim().length > 0;
+  });
+}
+
+function toApiPayload(data: Partial<BookingPayload>) {
+  return {
+    name: data.name!.trim(),
+    phone: data.phone!.trim(),
+    service: data.service!.trim(),
+    preferredDate: data.preferredDate!.trim(),
+    preferredTime: data.preferredTime!.trim(),
+    message: data.message?.trim() || "",
+    status: "new"
+  };
+}
+
+function toSupabasePayload(data: ReturnType<typeof toApiPayload>) {
+  return {
+    name: data.name,
+    phone: data.phone,
+    service: data.service,
+    preferred_date: data.preferredDate,
+    preferred_time: data.preferredTime,
+    message: data.message,
+    status: data.status
+  };
+}
+
+export async function GET() {
+  return NextResponse.json({
+    success: true,
+    message: "Bookings API is ready."
   });
 }
 
@@ -31,25 +62,35 @@ export async function POST(request: Request) {
       );
     }
 
-    const booking: BookingPayload = {
-      name: data.name!.trim(),
-      phone: data.phone!.trim(),
-      service: data.service!.trim(),
-      preferredDate: data.preferredDate!.trim(),
-      preferredTime: data.preferredTime!.trim(),
-      message: data.message?.trim() || ""
-    };
+    const booking = toApiPayload(data);
 
-    // Supabase-ready for later:
-    // const { error } = await supabase.from("bookings").insert([booking]);
-    // if (error) throw error;
+    if (isSupabaseConfigured && supabase) {
+      const { data: savedBooking, error } = await supabase
+        .from("bookings")
+        .insert([toSupabasePayload(booking)])
+        .select()
+        .single();
+
+      if (!error) {
+        return NextResponse.json({
+          success: true,
+          message: "Booking request saved.",
+          data: savedBooking
+        });
+      }
+
+      console.warn("Supabase booking insert skipped for demo fallback:", error.message);
+    }
 
     return NextResponse.json({
       success: true,
       message: "Booking request received.",
-      data: booking
+      data: booking,
+      mode: isSupabaseConfigured ? "demo-fallback" : "demo"
     });
-  } catch {
+  } catch (error) {
+    console.error("Booking API error:", error);
+
     return NextResponse.json(
       {
         success: false,
