@@ -64,29 +64,38 @@ export async function POST(request: Request) {
 
     const booking = toApiPayload(data);
 
-    if (isSupabaseConfigured && supabase) {
-      const { data: savedBooking, error } = await supabase
-        .from("bookings")
-        .insert([toSupabasePayload(booking)])
-        .select()
-        .single();
+    if (!isSupabaseConfigured || !supabase) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Booking service is not configured."
+        },
+        { status: 503 }
+      );
+    }
 
-      if (!error) {
-        return NextResponse.json({
-          success: true,
-          message: "Booking request saved.",
-          data: savedBooking
-        });
-      }
+    const { data: savedBooking, error } = await supabase
+      .from("bookings")
+      .insert([toSupabasePayload(booking)])
+      .select()
+      .single();
 
-      console.warn("Supabase booking insert skipped for demo fallback:", error.message);
+    if (error) {
+      console.error("Supabase booking insert failed:", error.message);
+
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Unable to save booking. Please try again."
+        },
+        { status: 500 }
+      );
     }
 
     return NextResponse.json({
       success: true,
-      message: "Booking request received.",
-      data: booking,
-      mode: isSupabaseConfigured ? "demo-fallback" : "demo"
+      message: "Booking request saved.",
+      data: savedBooking
     });
   } catch (error) {
     console.error("Booking API error:", error);
