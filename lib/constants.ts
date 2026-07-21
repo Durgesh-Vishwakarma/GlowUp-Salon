@@ -26,9 +26,9 @@ export const business = {
   location: "Bandra West, Mumbai",
   tagline: "Look confident. Feel beautiful.",
   description:
-    "Premium Hair, Skin, Bridal & Spa Services in Bandra crafted with expertise and the finest products. Book your appointment in seconds.",
+    "Experience the ultimate in beauty and relaxation at GlowUp Salon & Spa in Bandra West, Mumbai. Our expert stylists and therapists offer premium hair styling, customized skin care, exquisite bridal makeup, and rejuvenating spa rituals, all designed to elevate your natural beauty in a luxurious and calming environment.",
   shortDescription:
-    "A premium beauty destination for polished hair, luminous skin, bridal glam, nails and spa rituals in Bandra West.",
+    "A premier beauty destination in Bandra West offering bespoke hair care, luminous skin treatments, flawless bridal styling, and relaxing spa rituals.",
   phone: salonContact.phone,
   phoneRaw: salonContact.whatsappNumber,
   timing: "10 AM - 9 PM, Monday to Sunday",
@@ -38,7 +38,7 @@ export const business = {
 
 export const heroImage = {
   src: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=90",
-  alt: "Premium salon interior with warm aesthetic lighting"
+  alt: "GlowUp Salon - Premium hair and beauty salon interior in Bandra West, Mumbai"
 };
 
 export const navItems = [
@@ -69,37 +69,37 @@ export const trustStats = [
 export const services = [
   {
     title: "Hair Styling",
-    description: "Precision cuts, blow dry, smoothening, colour and event-ready styling.",
+    description: "Transform your look with precision cuts, voluminous blow dries, keratin smoothening, vibrant color treatments, and flawless event-ready styling by top professionals.",
     price: "Starting from ₹799",
     icon: Scissors
   },
   {
     title: "Skin Care",
-    description: "Glow facials, cleanup, detan and skin rituals tailored to your skin.",
+    description: "Reveal radiant skin with our signature glow facials, deep cleanups, de-tan treatments, and bespoke skin rituals tailored specifically for your unique skin type.",
     price: "Starting from ₹1,499",
     icon: Sparkles
   },
   {
     title: "Bridal Makeup",
-    description: "Elegant bridal looks, trials, draping and complete beauty styling.",
+    description: "Look breathtaking on your special day with our elegant bridal makeup packages. Includes pre-wedding trials, traditional draping, and comprehensive beauty styling.",
     price: "Starting from ₹9,999",
     icon: Wand2
   },
   {
     title: "Nail Art",
-    description: "Gel polish, extensions, premium manicures and detailed nail designs.",
+    description: "Express your style with long-lasting gel polish, acrylic extensions, luxurious premium manicures, and intricate, custom nail art designs.",
     price: "Starting from ₹999",
     icon: Palette
   },
   {
     title: "Spa & Relaxation",
-    description: "Restorative hair spa, relaxing therapy and calm self-care rituals.",
+    description: "Unwind and recharge with our restorative hair spa treatments, deep tissue therapy, and calming self-care rituals designed to melt away stress.",
     price: "Starting from ₹1,999",
     icon: HeartHandshake
   },
   {
     title: "Party Makeup",
-    description: "Soft glam, cocktail looks and camera-ready makeup for celebrations.",
+    description: "Turn heads at any event with soft glam, stunning cocktail looks, and flawless camera-ready makeup customized for your celebrations.",
     price: "Starting from ₹2,999",
     icon: Gem
   }
@@ -201,42 +201,42 @@ export const editorialOffers = [
 
 export const galleryImages = [
   {
-    title: "Aesthetic Salon Details",
+    title: "GlowUp Salon Aesthetic Interior and Premium Details",
     category: "Atmosphere",
     src: "https://images.pexels.com/photos/3993320/pexels-photo-3993320.jpeg?auto=compress&cs=tinysrgb&w=1200"
   },
   {
-    title: "Hair Styling",
+    title: "Professional Hair Styling and Color Treatment in Bandra",
     category: "Hair",
     src: "https://images.pexels.com/photos/3992874/pexels-photo-3992874.jpeg?auto=compress&cs=tinysrgb&w=1200"
   },
   {
-    title: "Bridal Details",
+    title: "Elegant Bridal Makeup and Pre-Wedding Details",
     category: "Bridal",
     src: "https://images.pexels.com/photos/3373721/pexels-photo-3373721.jpeg?auto=compress&cs=tinysrgb&w=1200"
   },
   {
-    title: "Manicure Setup",
+    title: "Luxury Manicure and Nail Art Station Setup",
     category: "Nails",
     src: "https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg?auto=compress&cs=tinysrgb&w=1200"
   },
   {
-    title: "Skin Rituals",
+    title: "Rejuvenating Skin Care and Glow Facial Rituals",
     category: "Skin",
     src: "https://images.pexels.com/photos/3985329/pexels-photo-3985329.jpeg?auto=compress&cs=tinysrgb&w=1200"
   },
   {
-    title: "Spa Essentials",
+    title: "Relaxing Spa Essentials and Wellness Therapy",
     category: "Spa",
     src: "https://images.pexels.com/photos/3757952/pexels-photo-3757952.jpeg?auto=compress&cs=tinysrgb&w=1200"
   },
   {
-    title: "Premium Products",
+    title: "Premium Salon Products for Hair and Skin Care",
     category: "Care",
     src: "https://images.pexels.com/photos/3735657/pexels-photo-3735657.jpeg?auto=compress&cs=tinysrgb&w=1200"
   },
   {
-    title: "Relaxation Lounge",
+    title: "Calm Relaxation Lounge at GlowUp Salon",
     category: "Interior",
     src: "https://images.pexels.com/photos/5240677/pexels-photo-5240677.jpeg?auto=compress&cs=tinysrgb&w=1200"
   }

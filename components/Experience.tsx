@@ -69,7 +69,7 @@ export function Experience() {
             <motion.div className="absolute inset-x-0 -top-[10%] h-[120%] w-full">
               <Image
                 src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=90"
-                alt="GlowUp Salon interior experience"
+                alt="GlowUp Salon interior showing premium styling stations and relaxing ambiance in Bandra West"
                 fill
                 className="object-cover"
                 sizes="(min-width: 1024px) 50vw, 100vw"
