@@ -24,7 +24,7 @@ export function ServicesPreview() {
                 style={{ backgroundColor: "#7C1034" }}
               />
               <EyebrowReveal
-                text="What We Offer"
+                text="Salon Services in Bandra West"
                 className="font-sans font-bold uppercase text-[11px] text-[#7C1034]"
               />
             </div>
@@ -32,14 +32,14 @@ export function ServicesPreview() {
               className="font-display font-bold"
               style={{ fontSize: "clamp(38px, 4.5vw, 58px)", lineHeight: 1.06, color: "#0A0909" }}
             >
-              <RevealText text="Our Services" />
+              <RevealText text="Hair, skin, nails & bridal" />
             </h2>
           </div>
           <p
             className="max-w-[340px] leading-relaxed lg:text-right"
             style={{ fontSize: "16px", color: "#5E5555" }}
           >
-            Every service is crafted with expert care,&nbsp;premium products and a commitment to your comfort.
+            Six services, one team of senior stylists and therapists. Every appointment starts with a consultation, not a price list.
           </p>
         </div>
 
@@ -91,7 +91,12 @@ export function ServicesPreview() {
                     className="font-display font-bold"
                     style={{ fontSize: "24px", lineHeight: 1.2, color: "#0A0909", marginBottom: "12px" }}
                   >
-                    {service.title}
+                    <Link
+                      href={`/services/${service.slug}`}
+                      className="transition-colors hover:text-[#7C1034]"
+                    >
+                      {service.title}
+                    </Link>
                   </h3>
 
                   {/* Description */}
@@ -113,12 +118,14 @@ export function ServicesPreview() {
                     >
                       {service.price}
                     </span>
-                    <span
+                    <Link
+                      href={`/services/${service.slug}`}
+                      aria-label={`Read more about ${service.title} in Bandra West`}
                       className="flex h-9 w-9 items-center justify-center border transition-all duration-300 group-hover:bg-[#7C1034] group-hover:border-[#7C1034] group-hover:text-white"
                       style={{ borderColor: "#DDD3C8", color: "#B0A09A" }}
                     >
                       <ArrowRight className="h-4 w-4" />
-                    </span>
+                    </Link>
                   </div>
                 </div>
               </motion.div>

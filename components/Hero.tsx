@@ -9,9 +9,9 @@ import { createWhatsAppUrl } from "@/lib/utils";
 import { RevealText, EyebrowReveal, ImageReveal } from "./Animations";
 
 const TRUST = [
-  { icon: Star, label: "4.9 / 5", sub: "Google Rating" },
-  { icon: Users, label: "500+ Clients", sub: "Served & Happy" },
-  { icon: MessageCircle, label: "WhatsApp Booking", sub: "Instant Confirm" }
+  { icon: Star, label: "4.9 / 5", sub: "Rated on Google" },
+  { icon: Users, label: "12,000+ Clients", sub: "Served since 2018" },
+  { icon: MessageCircle, label: "Open 10 AM – 9 PM", sub: "Every day, walk-ins ok" }
 ];
 
 export function Hero() {
@@ -36,7 +36,7 @@ export function Hero() {
               style={{ backgroundColor: "#B8733A" }}
             />
             <EyebrowReveal
-              text="Premium Salon Experience · Bandra West"
+              text="Look confident. Feel beautiful. · Bandra West, Mumbai"
               className="font-sans text-[11px] font-bold uppercase text-[#7C1034]"
               delay={0.2}
             />
@@ -51,11 +51,11 @@ export function Hero() {
               color: "#0A0909"
             }}
           >
-            <RevealText text="Look confident." delay={0.2} />
+            <RevealText text="Hair, skin & bridal" delay={0.2} />
             <br />
-            <RevealText text="Feel " delay={0.4} />
+            <RevealText text="salon in " delay={0.4} />
             <em className="not-italic" style={{ color: "#7C1034" }}>
-              <RevealText text="beautiful." delay={0.5} />
+              <RevealText text="Bandra West." delay={0.5} />
             </em>
           </h1>
 

@@ -27,7 +27,7 @@ export function Experience() {
               style={{ backgroundColor: "#B8733A" }}
             />
             <EyebrowReveal
-              text="The Experience"
+              text="Why Bandra Books With Us"
               className="font-sans font-bold uppercase text-[11px] text-[#B8733A]"
             />
           </div>
@@ -36,18 +36,18 @@ export function Experience() {
             className="font-display font-bold text-balance"
             style={{ fontSize: "clamp(40px, 5vw, 64px)", lineHeight: 1.05, color: "#0A0909" }}
           >
-            <RevealText text="A moment of " />
+            <RevealText text="A " />
             <em className="not-italic" style={{ color: "#7C1034" }}>
               <RevealText text="calm " delay={0.2} />
             </em>
-            <RevealText text="in the city." delay={0.3} />
+            <RevealText text="salon off Linking Road." delay={0.3} />
           </h2>
 
           <p className="mt-8 leading-relaxed" style={{ fontSize: "17px", color: "#5E5555" }}>
-            At GlowUp Salon, we believe that beauty is deeply personal. From the moment you step through our doors, you are enveloped in an atmosphere of tranquility and refined luxury. 
+            GlowUp has been styling Bandra West since 2018. It is a unisex salon, which in practice means our senior team handles a bridal trial, a men&apos;s fade and a scalp treatment in the same afternoon without any of them feeling rushed.
           </p>
           <p className="mt-4 leading-relaxed" style={{ fontSize: "17px", color: "#5E5555" }}>
-            Our master stylists and therapists take the time to understand your unique features, lifestyle, and desires, ensuring every treatment is perfectly tailored to elevate your natural glow.
+            Every service opens with a consultation — your hair texture, your skin type, how much styling time you actually have on a weekday morning. Tools are sterilised between clients, colour is patch-tested, and if a treatment is wrong for you right now, we will tell you instead of booking it.
           </p>
 
           <div className="mt-10 flex items-center gap-4">

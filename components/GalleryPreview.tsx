@@ -22,7 +22,7 @@ export function GalleryPreview() {
               style={{ backgroundColor: "#7C1034" }}
             />
             <EyebrowReveal
-              text="Our Work"
+              text="Salon Gallery"
               className="font-sans font-bold uppercase text-[11px] text-[#7C1034]"
             />
           </div>
@@ -30,13 +30,13 @@ export function GalleryPreview() {
             className="font-display font-bold"
             style={{ fontSize: "clamp(38px, 4.5vw, 58px)", lineHeight: 1.06, color: "#0A0909" }}
           >
-            <RevealText text="A Glimpse Inside" />
+            <RevealText text="Inside our Bandra West salon" />
           </h2>
           <p
             className="mt-4 max-w-[500px] leading-relaxed"
             style={{ fontSize: "17px", color: "#5E5555", lineHeight: 1.75 }}
           >
-            Every visit is a carefully curated experience — from the chair to the mirror.
+            Real work from our studio — hair colour, bridal looks, nail sets and the treatment rooms you will be sitting in.
           </p>
         </div>
 

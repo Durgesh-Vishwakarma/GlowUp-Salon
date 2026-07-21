@@ -135,10 +135,10 @@ export function BookingSection() {
             className="font-display font-bold"
             style={{ fontSize: "clamp(36px, 4vw, 52px)", lineHeight: 1.1, color: "#fff" }}
           >
-            <RevealText text="Your Beauty." />
+            <RevealText text="Book a salon" />
             <br />
             <span style={{ color: "#B8733A" }}>
-              <RevealText text="Our Priority." delay={0.2} />
+              <RevealText text="appointment in Bandra." delay={0.2} />
             </span>
           </h2>
 
@@ -148,7 +148,7 @@ export function BookingSection() {
             className="leading-relaxed"
             style={{ fontSize: "16px", color: "rgba(255,255,255,0.52)", lineHeight: 1.8, maxWidth: "320px" }}
           >
-            Fill in your details and our team will confirm your appointment within the hour.
+            Send your details and we confirm your slot within the hour, 10 AM to 9 PM. Need something today? WhatsApp is faster.
           </p>
 
           {/* Contact details */}

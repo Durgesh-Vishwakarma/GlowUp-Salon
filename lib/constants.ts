@@ -16,6 +16,8 @@ import {
   Wand2
 } from "lucide-react";
 
+export const siteUrl = "https://glowupsalon.com";
+
 export const salonContact = {
   phone: "+91 98345 17990",
   whatsappNumber: "919834517990"
@@ -26,13 +28,33 @@ export const business = {
   location: "Bandra West, Mumbai",
   tagline: "Look confident. Feel beautiful.",
   description:
-    "Experience the ultimate in beauty and relaxation at GlowUp Salon & Spa in Bandra West, Mumbai. Our expert stylists and therapists offer premium hair styling, customized skin care, exquisite bridal makeup, and rejuvenating spa rituals, all designed to elevate your natural beauty in a luxurious and calming environment.",
+    "GlowUp Salon & Spa is a unisex beauty salon in Bandra West, Mumbai, offering expert haircuts and colour, glow facials, bridal makeup, gel nail art and hair spa treatments. Walk in seven days a week, or book an appointment in under a minute on WhatsApp.",
   shortDescription:
-    "A premier beauty destination in Bandra West offering bespoke hair care, luminous skin treatments, flawless bridal styling, and relaxing spa rituals.",
+    "Unisex hair, skin, nail and bridal makeup salon in Bandra West, Mumbai. Expert stylists, premium products, same-day appointments.",
+  metaDescription:
+    "Unisex salon in Bandra West, Mumbai. Haircuts from ₹799, facials from ₹1,499, bridal makeup from ₹9,999. Open 10 AM–9 PM daily — book on WhatsApp.",
   phone: salonContact.phone,
   phoneRaw: salonContact.whatsappNumber,
   timing: "10 AM - 9 PM, Monday to Sunday",
   instagram: "#",
+  priceRange: "₹₹",
+  founded: "2018",
+  streetAddress: "Linking Road, Bandra West",
+  locality: "Mumbai",
+  region: "MH",
+  postalCode: "400050",
+  country: "IN",
+  latitude: 19.0596,
+  longitude: 72.8295,
+  areasServed: [
+    "Bandra West",
+    "Bandra East",
+    "Khar",
+    "Santacruz",
+    "Juhu",
+    "Andheri West",
+    "Lower Parel"
+  ],
   whatsappMessage: "Hi GlowUp Salon, I want to book an appointment."
 };
 
@@ -68,39 +90,57 @@ export const trustStats = [
 
 export const services = [
   {
-    title: "Hair Styling",
-    description: "Transform your look with precision cuts, voluminous blow dries, keratin smoothening, vibrant color treatments, and flawless event-ready styling by top professionals.",
+    slug: "hair-salon-bandra",
+    title: "Hair Styling & Colour",
+    description:
+      "Precision haircuts, blow dries, keratin smoothening, balayage and global colour — shaped around your hair texture and face structure by senior stylists.",
     price: "Starting from ₹799",
+    priceValue: 799,
     icon: Scissors
   },
   {
-    title: "Skin Care",
-    description: "Reveal radiant skin with our signature glow facials, deep cleanups, de-tan treatments, and bespoke skin rituals tailored specifically for your unique skin type.",
+    slug: "facial-treatments-bandra",
+    title: "Facials & Skin Care",
+    description:
+      "Glow facials, HydraFacial, de-tan treatments and deep cleanups. Every session starts with a skin analysis so the products match your skin type, not a template.",
     price: "Starting from ₹1,499",
+    priceValue: 1499,
     icon: Sparkles
   },
   {
+    slug: "bridal-makeup-bandra",
     title: "Bridal Makeup",
-    description: "Look breathtaking on your special day with our elegant bridal makeup packages. Includes pre-wedding trials, traditional draping, and comprehensive beauty styling.",
+    description:
+      "HD and airbrush bridal makeup with a pre-wedding trial, saree or lehenga draping and hair styling — built to hold through a full Mumbai wedding day.",
     price: "Starting from ₹9,999",
+    priceValue: 9999,
     icon: Wand2
   },
   {
-    title: "Nail Art",
-    description: "Express your style with long-lasting gel polish, acrylic extensions, luxurious premium manicures, and intricate, custom nail art designs.",
+    slug: "nail-art-bandra",
+    title: "Nail Art & Extensions",
+    description:
+      "Gel polish, acrylic and gel extensions, French sets and custom nail art — applied with sterilised tools and finished to last three to four weeks.",
     price: "Starting from ₹999",
+    priceValue: 999,
     icon: Palette
   },
   {
-    title: "Spa & Relaxation",
-    description: "Unwind and recharge with our restorative hair spa treatments, deep tissue therapy, and calming self-care rituals designed to melt away stress.",
+    slug: "hair-spa-massage-bandra",
+    title: "Hair Spa & Body Massage",
+    description:
+      "Restorative hair spa rituals, scalp treatments, aroma therapy and deep tissue massage for anyone carrying a week of Mumbai around in their shoulders.",
     price: "Starting from ₹1,999",
+    priceValue: 1999,
     icon: HeartHandshake
   },
   {
-    title: "Party Makeup",
-    description: "Turn heads at any event with soft glam, stunning cocktail looks, and flawless camera-ready makeup customized for your celebrations.",
+    slug: "party-makeup-bandra",
+    title: "Party & Event Makeup",
+    description:
+      "Soft glam, cocktail and reception looks finished for camera and flash — ideal for engagements, sangeets, shoots and night events.",
     price: "Starting from ₹2,999",
+    priceValue: 2999,
     icon: Gem
   }
 ];
@@ -247,23 +287,26 @@ export const galleryPreviewImages = galleryImages.slice(0, 6);
 export const testimonials = [
   {
     quote:
-      "Absolutely loved the experience! The staff is professional, warm and the results are always amazing.",
+      "I went in for a colour correction after a bad job elsewhere. They talked me through what was realistic in one sitting instead of overpromising, and the tone is still holding two months on.",
     name: "Ananya Mehta",
-    location: "Bandra, Mumbai",
+    location: "Bandra West, Mumbai",
+    service: "Hair Colour",
     initials: "AM"
   },
   {
     quote:
-      "The bridal consultation felt personal, calm and premium. They understood exactly what I wanted.",
+      "The bridal trial is what sold me. We tested the base under daylight and flash, changed the lip, and on the wedding day nothing moved through fourteen hours in May heat.",
     name: "Riya Malhotra",
-    location: "Mumbai",
+    location: "Khar, Mumbai",
+    service: "Bridal Makeup",
     initials: "RM"
   },
   {
     quote:
-      "Clean salon, beautiful interiors and very easy WhatsApp appointment booking.",
+      "Clean stations, fresh tools every time, and I can get a gel set booked on WhatsApp in about a minute. It has become my regular nail place in Bandra.",
     name: "Priya Shah",
-    location: "Bandra West",
+    location: "Santacruz, Mumbai",
+    service: "Nail Extensions",
     initials: "PS"
   }
 ];

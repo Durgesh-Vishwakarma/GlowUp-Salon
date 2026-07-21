@@ -12,16 +12,16 @@ export function Reviews() {
         
         <div className="mb-16 text-center">
           <EyebrowReveal
-            text="Client Stories"
+            text="Reviews · 4.9 on Google"
             className="font-sans font-bold uppercase text-[11px] text-[#7C1034]"
           />
           <h2
             className="mt-4 font-display font-bold"
             style={{ fontSize: "clamp(32px, 3.5vw, 48px)", lineHeight: 1.1, color: "#0A0909" }}
           >
-            <RevealText text="Loved by " />
+            <RevealText text="What Bandra clients " />
             <span style={{ color: "#B8733A" }}>
-              <RevealText text="our guests" delay={0.2} />
+              <RevealText text="say about us" delay={0.2} />
             </span>
           </h2>
         </div>
@@ -54,7 +54,9 @@ export function Reviews() {
                 </div>
                 <div>
                   <p className="font-bold" style={{ fontSize: "14px", color: "#0A0909" }}>{t.name}</p>
-                  <p style={{ fontSize: "12px", color: "#9A8F8A" }}>{t.location}</p>
+                  <p style={{ fontSize: "12px", color: "#9A8F8A" }}>
+                    {t.service} · {t.location}
+                  </p>
                 </div>
               </div>
             </motion.div>

@@ -6,9 +6,10 @@ import { useState, useEffect } from "react";
 import { business } from "@/lib/constants";
 
 const NAV_LINKS = [
-  { label: "Services", href: "#services" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Book", href: "#booking" },
+  { label: "Services & Prices", href: "/services" },
+  { label: "Gallery", href: "/#gallery" },
+  { label: "FAQs", href: "/#faq" },
+  { label: "Book", href: "/#booking" },
 ];
 
 export function Navbar() {
@@ -33,7 +34,7 @@ export function Navbar() {
 
         {/* ── Logo ── */}
         <Link
-          href="#home"
+          href="/"
           onClick={() => setIsOpen(false)}
           aria-label="GlowUp Salon home"
           className="flex flex-col leading-[1]"
@@ -78,7 +79,7 @@ export function Navbar() {
 
           {/* Book CTA */}
           <Link
-            href="#booking"
+            href="/#booking"
             id="navbar-book-cta"
             className="hidden h-[46px] items-center gap-2 bg-[#7C1034] px-6 font-sans font-bold text-white transition-colors hover:bg-[#5A0926] md:inline-flex"
             style={{ fontSize: "14px" }}
@@ -117,7 +118,7 @@ export function Navbar() {
           </div>
 
           <Link
-            href="#booking"
+            href="/#booking"
             onClick={() => setIsOpen(false)}
             className="mt-5 flex h-[52px] w-full items-center justify-center gap-2 bg-[#7C1034] font-bold text-white"
             style={{ fontSize: "15px" }}

@@ -17,14 +17,14 @@ export function Footer() {
         <div className="mx-auto flex w-full max-w-[1380px] flex-col items-center justify-between gap-5 px-6 py-8 sm:flex-row sm:px-10 lg:px-14">
           <div>
             <p className="font-display font-bold text-white" style={{ fontSize: "26px", lineHeight: 1.2 }}>
-              Ready to look your best?
+              Need a salon appointment in Bandra West?
             </p>
             <p className="mt-1 text-white/70" style={{ fontSize: "15px" }}>
-              Book your appointment today — it only takes 30 seconds.
+              Open 10 AM to 9 PM, every day. Booking takes about 30 seconds.
             </p>
           </div>
           <Link
-            href="#booking"
+            href="/#booking"
             className="inline-flex h-[52px] shrink-0 items-center gap-2 border-2 border-white bg-transparent px-8 font-bold text-white transition hover:bg-white hover:text-[#7C1034]"
             style={{ fontSize: "14px" }}
           >
@@ -39,7 +39,7 @@ export function Footer() {
 
         {/* Brand column */}
         <div>
-          <Link href="#home" aria-label="GlowUp Salon" className="inline-block">
+          <Link href="/" aria-label="GlowUp Salon" className="inline-block">
             <span
               className="block font-display font-bold text-white"
               style={{ fontSize: "34px", lineHeight: 1, letterSpacing: "-0.01em" }}
@@ -96,7 +96,7 @@ export function Footer() {
             {services.map((s) => (
               <li key={s.title}>
                 <Link
-                  href="#services"
+                  href={`/services/${s.slug}`}
                   className="transition-colors hover:text-white"
                   style={{ fontSize: "15px", color: "rgba(255,255,255,0.50)" }}
                 >
@@ -117,10 +117,11 @@ export function Footer() {
           </p>
           <ul className="flex flex-col gap-3">
             {[
-              { label: "Home", href: "#home" },
-              { label: "Our Services", href: "#services" },
-              { label: "Gallery", href: "#gallery" },
-              { label: "Book Appointment", href: "#booking" },
+              { label: "Home", href: "/" },
+              { label: "Services & Prices", href: "/services" },
+              { label: "Gallery", href: "/#gallery" },
+              { label: "Salon FAQs", href: "/#faq" },
+              { label: "Book Appointment", href: "/#booking" },
             ].map((l) => (
               <li key={l.label}>
                 <Link
@@ -146,9 +147,14 @@ export function Footer() {
           <ul className="flex flex-col gap-5">
             <li className="flex items-start gap-3">
               <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#B8733A]" strokeWidth={1.5} />
-              <span style={{ fontSize: "15px", color: "rgba(255,255,255,0.50)", lineHeight: 1.6 }}>
-                {business.location}
-              </span>
+              <address
+                className="not-italic"
+                style={{ fontSize: "15px", color: "rgba(255,255,255,0.50)", lineHeight: 1.6 }}
+              >
+                {business.streetAddress}
+                <br />
+                {business.locality} {business.postalCode}, {business.region}
+              </address>
             </li>
             <li className="flex items-center gap-3">
               <Phone className="h-5 w-5 shrink-0 text-[#B8733A]" strokeWidth={1.5} />
@@ -180,7 +186,7 @@ export function Footer() {
             © {year} GlowUp Salon &amp; Spa · Bandra West, Mumbai · All rights reserved.
           </p>
           <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.22)" }}>
-            Designed for premium salon experience
+            Serving {business.areasServed.join(", ")}
           </p>
         </div>
       </div>
